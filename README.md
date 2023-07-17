@@ -1,2 +1,1 @@
-# Weather.github.io
-Weather Web App
+# MyWeather.github.io
