@@ -83,6 +83,9 @@ async function fetchUserWeatherInfo(coordinates){
         const response=await fetch(
            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
         );
+         if (!response.ok) {
+        throw new Error('coordinates not found');
+      }
        
        const data=await response.json();
       // grantAccessContainer.classList.remove("active")
@@ -190,8 +193,7 @@ async function fetchSearchWeatherInfo(city){
       loadingScreen.classList.remove("active");
       userInfoContainer.classList.add("active");
       renderWeatherInfo(data);
-    }
-    catch(err)
+    }catch(err)
     {
         //hW
          loadingScreen.classList.remove("active");
