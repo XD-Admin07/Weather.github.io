@@ -48,7 +48,13 @@ h1{
     opacity:1;
     display:flex;  
 }
-
+.not_found{
+    display: none;
+    text-align: center;
+}
+.not_found.active {
+    display: block;
+}
 .weather-container{
    margin-block: 4rem;  
 }
