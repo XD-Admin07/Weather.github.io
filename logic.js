@@ -195,6 +195,7 @@ async function fetchSearchWeatherInfo(city){
          loadingScreen.classList.remove("active");
         error.classList.add("active");
         console.error(err);
+        console.log("nhi aa rha bhay city");
        
     }
 }
