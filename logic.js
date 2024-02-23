@@ -90,7 +90,7 @@ async function fetchUserWeatherInfo(coordinates){
        const data=await response.json();
       // grantAccessContainer.classList.remove("active")
        loadingScreen.classList.remove("active");
-       
+       error.classList.remove("active");
        userInfoContainer.classList.add("active");
        renderWeatherInfo(data);
     }
@@ -199,7 +199,7 @@ async function fetchSearchWeatherInfo(city){
          loadingScreen.classList.remove("active");
         error.classList.add("active");
         console.error(err);
-        console.log("nhi aa rha bhay city");
+        
        
     }
 }
