@@ -76,6 +76,7 @@ async function fetchUserWeatherInfo(coordinates){
     grantAccessContainer.classList.remove("active");
     loadingScreen.classList.add("active");
     error.classList.add("active");
+    error.classList.remove("active");
     
 
     // API CALL
@@ -91,7 +92,7 @@ async function fetchUserWeatherInfo(coordinates){
        const data=await response.json();
       // grantAccessContainer.classList.remove("active")
        loadingScreen.classList.remove("active");
-  
+      
        userInfoContainer.classList.add("active");
        renderWeatherInfo(data);
     }
@@ -179,6 +180,7 @@ async function fetchSearchWeatherInfo(city){
     loadingScreen.classList.add("active");
     userInfoContainer.classList.remove("active");
     grantAccessContainer.classList.remove("active");
+    error.classList.remove("active");
 
     try{
 
@@ -193,6 +195,7 @@ async function fetchSearchWeatherInfo(city){
       const data= await response.json();
       loadingScreen.classList.remove("active");
       userInfoContainer.classList.add("active");
+        
       renderWeatherInfo(data);
     }catch(err)
     {
