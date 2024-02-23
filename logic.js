@@ -6,6 +6,7 @@ const searchForm=document.querySelector("[data-searchForm]");
 const loadingScreen=document.querySelector(".loading-container");
 const userInfoContainer=document.querySelector(".user-info-container");
 const error=document.querySelector(".not_found");
+const error_cor =document.querySelector(".not_found_cor");
 
 //initially variables nee??
 
@@ -92,6 +93,7 @@ async function fetchUserWeatherInfo(coordinates){
     }
     catch(err){
        loadingScreen.classList.remove("active");
+        error_cor.classList.add("not_found_cor");
        //HW
     }
 }
