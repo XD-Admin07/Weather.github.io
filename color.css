@@ -55,6 +55,13 @@ h1{
 .not_found.active {
     display: block;
 }
+.not_found_cor{
+    display: none;
+    text-align: center;
+}
+.not_found_cor.active {
+    display: block;
+}
 .weather-container{
    margin-block: 4rem;  
 }
