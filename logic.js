@@ -5,6 +5,7 @@ const grantAccessContainer=document.querySelector(".grant-location-container");
 const searchForm=document.querySelector("[data-searchForm]");
 const loadingScreen=document.querySelector(".loading-container");
 const userInfoContainer=document.querySelector(".user-info-container");
+const error=document.querySelector(".not_found");
 
 //initially variables nee??
 
@@ -179,6 +180,9 @@ async function fetchSearchWeatherInfo(city){
          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
          
       );
+        if (!response.ok) {
+        throw new Error('City not found');
+      }
 
       const data= await response.json();
       loadingScreen.classList.remove("active");
@@ -188,6 +192,10 @@ async function fetchSearchWeatherInfo(city){
     catch(err)
     {
         //hW
+         loadingScreen.classList.remove("active");
+        error.classList.add("active");
+        console.error(err);
+       
     }
 }
 
