@@ -60,6 +60,7 @@ function getfromSessionStorage(){
     {
         // agar local coordinates nhi mile
         grantAccessContainer.classList.add("active");
+       
     }
     else{
         const coordinates=JSON.parse(localCoordinates);
@@ -75,7 +76,7 @@ async function fetchUserWeatherInfo(coordinates){
     // make grantcontainer invisible
     grantAccessContainer.classList.remove("active");
     loadingScreen.classList.add("active");
-    error.classList.add("active");
+    error.classList.remove("active");
     
     
 
