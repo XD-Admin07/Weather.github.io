@@ -75,6 +75,7 @@ async function fetchUserWeatherInfo(coordinates){
     // make grantcontainer invisible
     grantAccessContainer.classList.remove("active");
     loadingScreen.classList.add("active");
+    error.classList.add("active");
     
 
     // API CALL
@@ -90,7 +91,7 @@ async function fetchUserWeatherInfo(coordinates){
        const data=await response.json();
       // grantAccessContainer.classList.remove("active")
        loadingScreen.classList.remove("active");
-       error.classList.remove("active");
+  
        userInfoContainer.classList.add("active");
        renderWeatherInfo(data);
     }
